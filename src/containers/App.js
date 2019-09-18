@@ -80,7 +80,7 @@ class App extends Component {
   */
   componentDidUpdate(prevProps, prevState) {
     if(this.state.imgUrl !== prevState.imgUrl) {
-      fetch("http://immense-beyond-32423.herokuapp.com/imageurl", {
+      fetch("https://immense-beyond-32423.herokuapp.com/imageurl", {
         method: "post",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(
@@ -92,7 +92,7 @@ class App extends Component {
         .then(data => this.displayFaceBoxes(this.calculateFaceLocations(data)))
         .catch(err => console.log(err));
 
-        fetch("http://immense-beyond-32423.herokuapp.com/image", {
+        fetch("https://immense-beyond-32423.herokuapp.com/image", {
           method: "put",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(
