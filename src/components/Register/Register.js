@@ -23,7 +23,7 @@ class Register extends Component {
     }
 
     onSubmitRegister = () => {
-        fetch(process.env.BACKEND_API + "/register", {
+        fetch("https://face-recognition-api-ankan.herokuapp.com/register", {
             method: "post",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(

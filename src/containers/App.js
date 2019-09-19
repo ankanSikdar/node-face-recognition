@@ -80,7 +80,7 @@ class App extends Component {
   */
   componentDidUpdate(prevProps, prevState) {
     if(this.state.imgUrl !== prevState.imgUrl) {
-      fetch(process.env.BACKEND_API + "/imageurl", {
+      fetch("https://face-recognition-api-ankan.herokuapp.com/imageurl", {
         method: "post",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(
@@ -92,7 +92,7 @@ class App extends Component {
         .then(data => this.displayFaceBoxes(this.calculateFaceLocations(data)))
         .catch(err => console.log(err));
 
-        fetch(process.env.BACKEND_API + "/image", {
+        fetch("https://face-recognition-api-ankan.herokuapp.com/image", {
           method: "put",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(
